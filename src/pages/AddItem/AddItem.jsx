@@ -1,8 +1,11 @@
+import AddItemForm from "../../components/AddItemForm/AddItemForm";
+
 function AddItem() {
   return (
     <main>
       <h1>Lägg till vara</h1>
-      <p>Här kommer formuläret.</p>
+
+      <AddItemForm />
     </main>
   );
 }
