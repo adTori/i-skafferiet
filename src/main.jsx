@@ -4,11 +4,14 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import App from "./App.jsx";
+import PantryProvider from "./context/PantryContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <PantryProvider>
+        <App />
+      </PantryProvider>
     </BrowserRouter>
   </StrictMode>
 );
