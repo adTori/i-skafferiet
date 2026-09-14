@@ -1,13 +1,36 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { PantryContext } from "../../context/PantryContext";
 
 function AddItemForm() {
+  const { addItem } = useContext(PantryContext);
+
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [expiryDate, setExpiryDate] = useState("");
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const newItem = {
+      id: Date.now(),
+      name: name,
+      category: category,
+      quantity: Number(quantity),
+      expiryDate: expiryDate,
+    };
+
+    addItem(newItem);
+
+    // Töm formuläret
+    setName("");
+    setCategory("");
+    setQuantity(1);
+    setExpiryDate("");
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name">Namn</label>
         <input
