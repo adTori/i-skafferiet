@@ -8,9 +8,19 @@ function AddItemForm() {
   const [category, setCategory] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [expiryDate, setExpiryDate] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
+    if (!name.trim() || !category.trim()) {
+    setError("Fyll i namn och kategori.");
+    return;
+    }
+
+    if (Number(quantity) < 1) { setError("Antalet måste vara minst 1."); return; }
+
+    setError("");
 
     const newItem = {
       id: Date.now(),
@@ -71,6 +81,8 @@ function AddItemForm() {
           onChange={(event) => setExpiryDate(event.target.value)}
         />
       </div>
+
+      {error && <p>{error}</p>}
 
       <button type="submit">Lägg till</button>
     </form>
