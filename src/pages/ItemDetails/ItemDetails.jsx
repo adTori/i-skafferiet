@@ -1,6 +1,9 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
+
 import { PantryContext } from "../../context/PantryContext";
+import useRecipes from "../../hooks/useRecipes";
+import RecipeList from "../../components/RecipeList/RecipeList";
 
 function ItemDetails() {
   const { id } = useParams();
@@ -17,13 +20,23 @@ function ItemDetails() {
     );
   }
 
+  const { recipes, loading, error } = useRecipes(item.name);
+
   return (
     <main>
       <h1>{item.name}</h1>
 
       <p>Kategori: {item.category}</p>
       <p>Antal: {item.quantity}</p>
-      <p>Bäst före: {item.expiryDate || "Inget datum angivet"}</p>
+      <p>
+        Bäst före: {item.expiryDate || "Inget datum angivet"}
+      </p>
+
+      <h2>Recept</h2>
+
+      {!loading && !error && (
+        <RecipeList recipes={recipes} />
+      )}
     </main>
   );
 }
