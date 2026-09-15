@@ -1,9 +1,16 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const PantryContext = createContext();
 
 function PantryProvider({ children }) {
-  const [items, setItems] = useState([
+const [items, setItems] = useState(() => {
+  const savedItems = localStorage.getItem("pantryItems");
+
+  if (savedItems) {
+    return JSON.parse(savedItems);
+  }
+
+  return [
     {
       id: 1,
       name: "Pasta",
@@ -22,7 +29,8 @@ function PantryProvider({ children }) {
       category: "Mejeri",
       quantity: 1,
     },
-  ]);
+  ];
+});
 
   const addItem = (item) => {
     setItems((currentItems) => [
@@ -36,6 +44,8 @@ function PantryProvider({ children }) {
       currentItems.filter((item) => item.id !== id)
     );
   };
+
+  useEffect(() => { localStorage.setItem("pantryItems", JSON.stringify(items)); }, [items]);
 
   return (
     <PantryContext.Provider
