@@ -1,0 +1,45 @@
+.pantry-item {
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+
+.pantry-item-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 1.5rem 0;
+
+  color: var(--text-h);
+  text-decoration: none;
+
+  transition: padding 0.2s ease;
+}
+
+.pantry-item-link:hover {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.pantry-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.pantry-item-info strong {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.pantry-item-info span {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.pantry-item-quantity {
+  flex-shrink: 0;
+  font-size: 14px;
+  color: var(--text);
+}
