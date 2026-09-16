@@ -1,0 +1,19 @@
+.pantry-list {
+  margin: 0;
+  padding: 0;
+}
+
+.pantry-list-heading {
+  margin-bottom: 1rem;
+}
+
+.pantry-list-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pantry-list-empty {
+  padding: 1.5rem 0;
+  color: var(--text);
+}

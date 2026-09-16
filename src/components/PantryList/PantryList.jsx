@@ -1,6 +1,9 @@
 import { useContext } from "react";
+
 import { PantryContext } from "../../context/PantryContext";
 import PantryItem from "../PantryItem/PantryItem";
+
+import "./PantryList.css";
 
 function PantryList({ searchTerm, selectedCategory }) {
   const { items } = useContext(PantryContext);
@@ -18,18 +21,20 @@ function PantryList({ searchTerm, selectedCategory }) {
   });
 
   return (
-    <section>
-      <h2>Mina varor</h2>
+    <section className="pantry-list">
+      <h2 className="pantry-list-heading">Mina varor</h2>
 
-      <ul>
-        {filteredItems.length > 0 ? (
-          filteredItems.map((item) => (
+      {filteredItems.length > 0 ? (
+        <ul className="pantry-list-items">
+          {filteredItems.map((item) => (
             <PantryItem key={item.id} item={item} />
-          ))
-        ) : (
-          <p>Inga varor hittades.</p>
-        )}
-      </ul>
+          ))}
+        </ul>
+      ) : (
+        <p className="pantry-list-empty">
+          Inga varor hittades.
+        </p>
+      )}
     </section>
   );
 }
