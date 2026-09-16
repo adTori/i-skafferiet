@@ -1,9 +1,11 @@
 import { useContext, useState } from "react";
 
+import { PantryContext } from "../../context/PantryContext";
 import PantryList from "../../components/PantryList/PantryList";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import CategoryFilter from "../../components/CategoryFilter/CategoryFilter";
-import { PantryContext } from "../../context/PantryContext";
+
+import "./Home.css";
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,22 +13,29 @@ function Home() {
 
   const { items } = useContext(PantryContext);
 
-  const categories = [...new Set(items.map((item) => item.category))];
+  const categories = [
+    ...new Set(items.map((item) => item.category)),
+  ];
 
   return (
-    <main>
-      <h1>Mitt skafferi</h1>
+    <main className="home">
+      <section className="home-intro">
+        <h1>Mitt skafferi</h1>
+        <p>Håll koll på vad du har hemma.</p>
+      </section>
 
-      <SearchBar
-        searchTerm={searchTerm}
-        onSearch={setSearchTerm}
-      />
+      <section className="home-filters">
+        <SearchBar
+          searchTerm={searchTerm}
+          onSearch={setSearchTerm}
+        />
 
-      <CategoryFilter
-        categories={categories} 
-        selectedCategory={selectedCategory} 
-        onCategoryChange={setSelectedCategory} 
-      />
+        <CategoryFilter
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onCategoryChange={setSelectedCategory}
+        />
+      </section>
 
       <PantryList
         searchTerm={searchTerm}

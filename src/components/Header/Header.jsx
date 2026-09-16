@@ -3,10 +3,12 @@ import "./Header.css";
 
 function Header() {
   return (
-    <header>
-      <h1>Mitt skafferi</h1>
+    <header className="site-header">
+      <Link to="/" className="site-logo">
+        Mitt skafferi
+      </Link>
 
-      <nav>
+      <nav className="site-nav">
         <Link to="/">Hem</Link>
         <Link to="/add">Lägg till vara</Link>
       </nav>

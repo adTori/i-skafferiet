@@ -1,0 +1,50 @@
+.site-header {
+  min-height: 88px;
+  padding: 0 2rem;
+  border-bottom: 1px solid var(--border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-logo {
+  color: var(--text-h);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.site-nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--text-h);
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    min-height: auto;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .site-logo {
+    font-size: 26px;
+  }
+
+  .site-nav {
+    gap: 1rem;
+  }
+}
