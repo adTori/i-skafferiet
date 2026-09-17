@@ -1,3 +1,4 @@
+import "./AddItemForm.css";
 import { useContext, useState } from "react";
 import { PantryContext } from "../../context/PantryContext";
 
@@ -40,8 +41,8 @@ function AddItemForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit} className="add-item-form">
+      <div className="add-item-form-field">
         <label htmlFor="name">Namn</label>
         <input
           id="name"
@@ -51,7 +52,7 @@ function AddItemForm() {
         />
       </div>
 
-      <div>
+      <div className="add-item-form-field">
         <label htmlFor="category">Kategori</label>
         <input
           id="category"
@@ -61,7 +62,7 @@ function AddItemForm() {
         />
       </div>
 
-      <div>
+      <div className="add-item-form-field">
         <label htmlFor="quantity">Antal</label>
         <input
           id="quantity"
@@ -72,7 +73,7 @@ function AddItemForm() {
         />
       </div>
 
-      <div>
+      <div className="add-item-form-field">
         <label htmlFor="expiryDate">Bäst före</label>
         <input
           id="expiryDate"
@@ -82,7 +83,11 @@ function AddItemForm() {
         />
       </div>
 
-      {error && <p>{error}</p>}
+      {error && (
+        <p className="add-item-form-error">
+          {error}
+        </p>
+      )}
 
       <button type="submit">Lägg till</button>
     </form>
