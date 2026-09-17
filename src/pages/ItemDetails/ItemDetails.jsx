@@ -1,9 +1,12 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { PantryContext } from "../../context/PantryContext";
 import useRecipes from "../../hooks/useRecipes";
 import RecipeList from "../../components/RecipeList/RecipeList";
+import Loading from "../../components/Loading/Loading";
+
+import "./ItemDetails.css";
 
 function ItemDetails() {
   const { id } = useParams();
@@ -13,9 +16,10 @@ function ItemDetails() {
 
   if (!item) {
     return (
-      <main>
+      <main className="item-details">
         <h1>Varan hittades inte</h1>
         <p>Det finns ingen vara med detta ID.</p>
+        <Link to="/">Tillbaka till skafferiet</Link>
       </main>
     );
   }
@@ -23,20 +27,46 @@ function ItemDetails() {
   const { recipes, loading, error } = useRecipes(item.name);
 
   return (
-    <main>
-      <h1>{item.name}</h1>
+    <main className="item-details">
+      <Link to="/" className="item-details-back">
+        ← Tillbaka till skafferiet
+      </Link>
 
-      <p>Kategori: {item.category}</p>
-      <p>Antal: {item.quantity}</p>
-      <p>
-        Bäst före: {item.expiryDate || "Inget datum angivet"}
-      </p>
+      <section className="item-details-info">
+        <p className="item-details-category">{item.category}</p>
 
-      <h2>Recept</h2>
+        <h1>{item.name}</h1>
 
-      {!loading && !error && (
-        <RecipeList recipes={recipes} />
-      )}
+        <div className="item-details-meta">
+          <p>
+            <strong>Antal</strong>
+            <span>{item.quantity} st</span>
+          </p>
+
+          <p>
+            <strong>Bäst före</strong>
+            <span>
+              {item.expiryDate || "Inget datum angivet"}
+            </span>
+          </p>
+        </div>
+      </section>
+
+      <section className="item-details-recipes">
+        <h2>Receptförslag</h2>
+
+        {loading && <Loading />}
+
+        {error && (
+          <p className="item-details-error">
+            {error}
+          </p>
+        )}
+
+        {!loading && !error && (
+          <RecipeList recipes={recipes} />
+        )}
+      </section>
     </main>
   );
 }

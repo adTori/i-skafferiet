@@ -20,7 +20,7 @@ function Home() {
   return (
     <main className="home">
       <section className="home-intro">
-        <h1>Mitt skafferi</h1>
+        <h1>Skafferiet</h1>
         <p>Håll koll på vad du har hemma.</p>
       </section>
 

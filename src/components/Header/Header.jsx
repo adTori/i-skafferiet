@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="site-header">
       <Link to="/" className="site-logo">
-        Mitt skafferi
+        Skafferiet
       </Link>
 
       <nav className="site-nav">
