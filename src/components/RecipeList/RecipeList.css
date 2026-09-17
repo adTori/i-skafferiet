@@ -1,0 +1,50 @@
+.recipe-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.recipe-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.recipe-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.recipe-card-content {
+  padding: 1.25rem;
+}
+
+.recipe-card-content h3 {
+  margin: 0 0 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.recipe-card-link {
+  color: var(--text-h);
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.recipe-card-link:hover {
+  color: var(--accent);
+}
+
+.recipe-list-empty {
+  color: var(--text);
+}
+
+@media (min-width: 700px) {
+  .recipe-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

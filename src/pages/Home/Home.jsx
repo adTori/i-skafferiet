@@ -21,7 +21,7 @@ function Home() {
     <main className="home">
       <section className="home-intro">
         <h1>Skafferiet</h1>
-        <p>Håll koll på vad du har hemma.</p>
+        <p>Håll koll på vad du har i skafferiet.</p>
       </section>
 
       <section className="home-filters">
