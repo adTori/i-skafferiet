@@ -1,0 +1,47 @@
+.add-item {
+  width: min(100% - 2rem, 900px);
+  margin: 0 auto;
+  padding: 4rem 0 5rem;
+  text-align: left;
+}
+
+.add-item-intro {
+  max-width: 750px;
+  margin-bottom: 4rem;
+}
+
+.add-item-intro h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 7vw, 72px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin: 0 0 1.5rem;
+}
+
+.add-item-intro p {
+  max-width: 600px;
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+@media (min-width: 700px) {
+  .add-item {
+    padding: 5rem 0 6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .add-item {
+    padding-top: 3rem;
+  }
+
+  .add-item-intro {
+    margin-bottom: 3rem;
+  }
+
+  .add-item-intro p {
+    font-size: 18px;
+  }
+}
