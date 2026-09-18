@@ -1,7 +1,17 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+
+import { PantryContext } from "../../context/PantryContext";
+
 import "./PantryItem.css";
 
 function PantryItem({ item }) {
+  const { removeItem } = useContext(PantryContext);
+
+  const handleRemove = () => {
+    removeItem(item.id);
+  };
+
   return (
     <li className="pantry-item">
       <Link to={`/item/${item.id}`} className="pantry-item-link">
@@ -14,6 +24,10 @@ function PantryItem({ item }) {
           {item.quantity} st
         </span>
       </Link>
+
+      <button onClick={handleRemove}>
+        Ta bort
+      </button>
     </li>
   );
 }
