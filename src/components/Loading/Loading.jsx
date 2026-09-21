@@ -1,7 +1,12 @@
 import "./Loading.css";
 
 function Loading() {
-  return <p className="loading">Hämtar recept...</p>;
+  return (
+    <div className="loading">
+      <div className="loading-spinner"></div>
+      <p>Hämtar recept...</p>
+    </div>
+  );
 }
 
 export default Loading;
