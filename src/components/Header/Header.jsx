@@ -9,7 +9,7 @@ function Header() {
       </Link>
 
       <nav className="site-nav">
-        <Link to="/">Hem</Link>
+        <Link to="/">Skafferiet</Link>
         <Link to="/add">Lägg till vara</Link>
       </nav>
     </header>

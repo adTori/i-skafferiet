@@ -1,13 +1,14 @@
 .pantry-item {
   list-style: none;
   border-top: 1px solid var(--border);
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .pantry-item-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  flex: 1;
 
   padding: 1.5rem 0;
 
@@ -33,13 +34,28 @@
   font-weight: 500;
 }
 
-.pantry-item-info span {
+.pantry-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
   font-size: 14px;
   color: var(--text);
 }
 
-.pantry-item-quantity {
+.pantry-item button {
   flex-shrink: 0;
-  font-size: 14px;
-  color: var(--text);
+
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+
+  border: 1px solid var(--text-h);
+  border-radius: 999px;
+
+  background: var(--text-h);
+  color: var(--bg);
+}
+
+.pantry-item button:hover {
+  opacity: 0.85;
 }

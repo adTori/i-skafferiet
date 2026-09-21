@@ -1,5 +1,7 @@
 .add-item-form {
   max-width: 650px;
+  display: flex;
+  flex-direction: column;
 }
 
 .add-item-form-field {
