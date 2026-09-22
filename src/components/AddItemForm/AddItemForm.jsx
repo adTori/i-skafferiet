@@ -1,6 +1,7 @@
 import "./AddItemForm.css";
 import { useContext, useState } from "react";
 import { PantryContext } from "../../context/PantryContext";
+import toast from "react-hot-toast";
 
 function AddItemForm() {
   const { addItem } = useContext(PantryContext);
@@ -32,6 +33,7 @@ function AddItemForm() {
     };
 
     addItem(newItem);
+    toast.success("Varan har lagts till!");
 
     // Töm formuläret
     setName("");

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { PantryContext } from "../../context/PantryContext";
+import toast from "react-hot-toast";
 
 import "./PantryItem.css";
 
@@ -9,6 +10,7 @@ function PantryItem({ item }) {
 
   const handleRemove = () => {
     removeItem(item.id);
+    toast.success("Varan har tagits bort!");
   };
 
   return (
