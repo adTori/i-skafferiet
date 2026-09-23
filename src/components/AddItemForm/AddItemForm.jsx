@@ -45,7 +45,7 @@ function AddItemForm() {
   return (
     <form onSubmit={handleSubmit} className="add-item-form">
       <div className="add-item-form-field">
-        <label htmlFor="name">Namn</label>
+        <label htmlFor="name">Vara</label>
         <input
           id="name"
           type="text"
