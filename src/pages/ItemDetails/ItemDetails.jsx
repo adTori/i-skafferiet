@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+import toast from "react-hot-toast";
 
 import { PantryContext } from "../../context/PantryContext";
 import useRecipes from "../../hooks/useRecipes";
@@ -10,19 +11,24 @@ import "./ItemDetails.css";
 
 function ItemDetails() {
   const { id } = useParams();
-  const { items } = useContext(PantryContext);
+  const { items, removeItem } = useContext(PantryContext);
 
   const item = items.find((item) => item.id === Number(id));
 
   if (!item) {
     return (
       <main className="item-details">
-        <h1>Varan hittades inte</h1>
-        <p>Det finns ingen vara med detta ID.</p>
-        <Link to="/">Tillbaka till skafferiet</Link>
+        <Link to="/" className="item-details-back">
+          ← Tillbaka till skafferiet
+        </Link>
       </main>
     );
   }
+
+  const handleRemove = () => {
+    removeItem(item.id);
+    toast.success("Varan har tagits bort!");
+  };
 
   const { recipes, loading, error } = useRecipes(item.name);
 
@@ -49,6 +55,12 @@ function ItemDetails() {
               {item.expiryDate || "Inget datum angivet"}
             </span>
           </p>
+
+          <div className="item-details-actions">
+            <button onClick={handleRemove}>
+              Radera
+            </button>
+          </div>
         </div>
       </section>
 

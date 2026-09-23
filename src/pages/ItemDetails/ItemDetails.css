@@ -7,7 +7,6 @@
 .item-details-back {
   display: inline-block;
   margin-bottom: 4rem;
-
   color: var(--text);
   text-decoration: none;
   font-size: 15px;
@@ -24,7 +23,6 @@
 
 .item-details-category {
   margin-bottom: 1rem;
-
   color: var(--text);
   font-size: 14px;
   text-transform: uppercase;
@@ -33,7 +31,6 @@
 
 .item-details-info h1 {
   margin: 0 0 2rem;
-
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(48px, 8vw, 80px);
   font-weight: 400;
@@ -43,6 +40,7 @@
 
 .item-details-meta {
   display: flex;
+  align-items: center;
   gap: 3rem;
 }
 
@@ -61,6 +59,25 @@
 
 .item-details-meta span {
   color: var(--text-h);
+}
+
+.item-details-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.item-details-actions button {
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--text-h);
+  border-radius: 999px;
+  background: var(--text-h);
+  color: var(--bg);
+}
+
+.item-details-actions button:hover {
+  opacity: 0.85;
 }
 
 .item-details-recipes {
@@ -90,6 +107,12 @@
 
   .item-details-meta {
     flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
+  }
+
+  .item-details-actions {
+    margin-left: 0;
+    margin-top: 0.5rem;
   }
 }

@@ -33,7 +33,7 @@ function AddItemForm() {
     };
 
     addItem(newItem);
-    toast.success("Varan har lagts till!");
+    toast.success("Varan har lagts till i skafferiet!");
 
     // Töm formuläret
     setName("");
@@ -49,6 +49,7 @@ function AddItemForm() {
         <input
           id="name"
           type="text"
+          placeholder="T.ex. Pasta"
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
@@ -59,6 +60,7 @@ function AddItemForm() {
         <input
           id="category"
           type="text"
+          placeholder="T.ex Torrvaror"
           value={category}
           onChange={(event) => setCategory(event.target.value)}
         />
