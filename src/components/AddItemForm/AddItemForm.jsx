@@ -16,11 +16,14 @@ function AddItemForm() {
     event.preventDefault();
     
     if (!name.trim() || !category.trim()) {
-    setError("Fyll i namn och kategori.");
-    return;
+      setError("Fyll i namn och kategori.");
+      return;
     }
 
-    if (Number(quantity) < 1) { setError("Antalet måste vara minst 1."); return; }
+    if (Number(quantity) < 1) {
+      setError("Antalet måste vara minst 1.");
+      return;
+    }
 
     setError("");
 
