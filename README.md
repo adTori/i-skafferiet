@@ -1,24 +1,24 @@
 # iSkafferiet
 
-iSkafferiet är en responsiv skafferiapp byggd med React. Appen gör det enkelt att hålla koll på varor hemma, söka och filtrera bland dem och få receptförslag baserat på innehållet i skafferiet.
+iSkafferiet is a responsive pantry management app built with React. The app makes it easy to keep track of items in your pantry, search and filter them, and get recipe suggestions based on the items you have.
 
-## Funktioner
+## Features
 
-- Lägg till varor i skafferiet
-- Ange kategori, antal och bäst före-datum
-- Visa detaljer för varje vara
-- Ta bort varor
-- Söka bland varor
-- Filtrera varor efter kategori
-- Spara varor mellan sidladdningar med `localStorage`
-- Hämta receptförslag från TheMealDB API
-- Visa loading-status medan recept hämtas
-- Hantera API-fel och visa tydliga felmeddelanden
-- Visa tydliga meddelanden när inga varor eller recept hittas
-- Responsiv design för olika skärmstorlekar
-- Tillgänglighetsanpassning för tangentbordsnavigering och skärmläsare
+- Add items to the pantry
+- Add category, quantity and best-before date
+- View details for each pantry item
+- Remove items
+- Search for pantry items
+- Filter items by category
+- Save items between page reloads using `localStorage`
+- Fetch recipe suggestions from TheMealDB API
+- Display a loading state while recipes are being fetched
+- Handle API errors with clear error messages
+- Display clear empty states when no items or recipes are found
+- Responsive design for different screen sizes
+- Accessibility support for keyboard navigation and screen readers
 
-## Teknik
+## Technologies
 
 - React
 - JavaScript
@@ -31,9 +31,9 @@ iSkafferiet är en responsiv skafferiapp byggd med React. Appen gör det enkelt 
 - localStorage
 - React Hot Toast
 
-## Struktur
+## Project Structure
 
-Projektet är uppdelat i komponenter, sidor, context, hooks och services för att hålla koden strukturerad och lättare att underhålla.
+The project is organized into components, pages, context, hooks and services to keep the code structured and maintainable.
 
 src/
 ├── components/
@@ -62,65 +62,70 @@ src/
 
 ## Routing
 
-Appen använder React Router och innehåller tre vyer:
+The app uses React Router and includes three views:
 
-- `/` – Skafferiet
-- `/add` – Lägg till vara
-- `/item/:id` – Detaljsida för en vara
+- `/` – Pantry
+- `/add` – Add an item
+- `/item/:id` – Item details
 
-Navigeringen sker utan att sidan behöver laddas om.
+Navigation between the views takes place without reloading the page.
 
-## State och data
+## State and Data
 
-Skafferiets gemensamma state hanteras med Context API. Varorna sparas i `localStorage` så att de finns kvar även efter att sidan laddas om.
+The pantry's shared state is managed using the Context API. Pantry items are stored in `localStorage` so that they remain available after reloading the page.
 
-Formuläret för att lägga till varor använder lokal state för formulärvärden och innehåller validering av obligatoriska fält.
+The add-item form uses local state for form values and includes validation for required fields.
 
-## Recept
+## Recipes
 
-Receptförslag hämtas från [TheMealDB](https://www.themealdb.com/) baserat på namnet på den valda varan.
+Recipe suggestions are fetched from [TheMealDB](https://www.themealdb.com/) based on the name of the selected pantry item.
 
-Datahämtningen är separerad från presentationen genom en service och en custom hook. Appen hanterar loading, API-fel och situationer där inga recept hittas.
+Data fetching is separated from the presentation layer using a service and a custom hook. The app handles loading states, API errors and situations where no recipes are found.
 
-## Tillgänglighet
+## Accessibility
 
-Tillgänglighet har varit en del av utvecklingen av appen.
+Accessibility has been an important part of the development of the app.
 
-Appen innehåller bland annat:
+The app includes:
 
-- Semantisk HTML
-- Tydliga formulärlabels
-- Tangentbordsnavigering
-- ARIA-attribut där det behövs
-- Status- och felmeddelanden som kan uppfattas av skärmläsare
-- Beskrivande texter för bilder och länkar
+- Semantic HTML
+- Clear form labels
+- Keyboard navigation
+- ARIA attributes where needed
+- Status and error messages that can be interpreted by screen readers
+- Descriptive text for images and links
 
-Appens navigering och funktioner har testats med skärmläsare.
+The app's navigation and functionality have been tested using a screen reader.
 
-## Kom igång
+## Getting Started
 
-### Klona projektet
+### Clone the repository
 
 git clone https://github.com/adTori/i-skafferiet.git
 
-### Installera dependencies
+### Install dependencies
 
 cd i-skafferiet
 npm install
 
-### Starta utvecklingsservern
+### Start the development server
 
 npm run dev
 
-Öppna sedan adressen som visas i terminalen.
+Open the local URL shown in the terminal.
 
 ## Demo
 
-[Öppna iSkafferiet](https://iskafferiet.vercel.app/)
+[Open iSkafferiet](https://iskafferiet.vercel.app/)
 
 ## GitHub
 
-[GitHub-repository](https://github.com/adTori/i-skafferiet)
+[GitHub Repository](https://github.com/adTori/i-skafferiet)
+
+## Created by
+
+Victoria Friberg  
+2026s://github.com/adTori/i-skafferiet)
 
 ## Skapad av
 
