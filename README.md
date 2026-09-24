@@ -1,19 +1,128 @@
-# React + Vite
+# iSkafferiet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+iSkafferiet är en responsiv skafferiapp byggd med React. Appen gör det enkelt att hålla koll på varor hemma, söka och filtrera bland dem och få receptförslag baserat på innehållet i skafferiet.
 
-Currently, two official plugins are available:
+## Funktioner
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Lägg till varor i skafferiet
+- Ange kategori, antal och bäst före-datum
+- Visa detaljer för varje vara
+- Ta bort varor
+- Söka bland varor
+- Filtrera varor efter kategori
+- Spara varor mellan sidladdningar med `localStorage`
+- Hämta receptförslag från TheMealDB API
+- Visa loading-status medan recept hämtas
+- Hantera API-fel och visa tydliga felmeddelanden
+- Visa tydliga meddelanden när inga varor eller recept hittas
+- Responsiv design för olika skärmstorlekar
+- Tillgänglighetsanpassning för tangentbordsnavigering och skärmläsare
 
-## React Compiler
+## Teknik
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React
+- JavaScript
+- Vite
+- React Router
+- Context API
+- Custom Hooks
+- CSS
+- TheMealDB API
+- localStorage
+- React Hot Toast
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+## Struktur
 
-## Expanding the ESLint configuration
+Projektet är uppdelat i komponenter, sidor, context, hooks och services för att hålla koden strukturerad och lättare att underhålla.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+src/
+├── components/
+│   ├── AddItemForm/
+│   ├── CategoryFilter/
+│   ├── Footer/
+│   ├── Header/
+│   ├── Loading/
+│   ├── PantryItem/
+│   ├── PantryList/
+│   ├── RecipeList/
+│   └── SearchBar/
+├── context/
+│   └── PantryContext.jsx
+├── hooks/
+│   └── useRecipes.js
+├── pages/
+│   ├── Home/
+│   ├── AddItem/
+│   └── ItemDetails/
+├── services/
+│   └── recipeApi.js
+├── App.jsx
+├── index.css
+└── main.jsx
+
+## Routing
+
+Appen använder React Router och innehåller tre vyer:
+
+- `/` – Skafferiet
+- `/add` – Lägg till vara
+- `/item/:id` – Detaljsida för en vara
+
+Navigeringen sker utan att sidan behöver laddas om.
+
+## State och data
+
+Skafferiets gemensamma state hanteras med Context API. Varorna sparas i `localStorage` så att de finns kvar även efter att sidan laddas om.
+
+Formuläret för att lägga till varor använder lokal state för formulärvärden och innehåller validering av obligatoriska fält.
+
+## Recept
+
+Receptförslag hämtas från [TheMealDB](https://www.themealdb.com/) baserat på namnet på den valda varan.
+
+Datahämtningen är separerad från presentationen genom en service och en custom hook. Appen hanterar loading, API-fel och situationer där inga recept hittas.
+
+## Tillgänglighet
+
+Tillgänglighet har varit en del av utvecklingen av appen.
+
+Appen innehåller bland annat:
+
+- Semantisk HTML
+- Tydliga formulärlabels
+- Tangentbordsnavigering
+- ARIA-attribut där det behövs
+- Status- och felmeddelanden som kan uppfattas av skärmläsare
+- Beskrivande texter för bilder och länkar
+
+Appens navigering och funktioner har testats med skärmläsare.
+
+## Kom igång
+
+### Klona projektet
+
+git clone https://github.com/adTori/i-skafferiet.git
+
+### Installera dependencies
+
+cd i-skafferiet
+npm install
+
+### Starta utvecklingsservern
+
+npm run dev
+
+Öppna sedan adressen som visas i terminalen.
+
+## Demo
+
+[Öppna iSkafferiet](https://iskafferiet.vercel.app/)
+
+## GitHub
+
+[GitHub-repository](https://github.com/adTori/i-skafferiet)
+
+## Skapad av
+
+Victoria Friberg  
+2026
