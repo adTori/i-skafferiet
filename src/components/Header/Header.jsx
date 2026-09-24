@@ -8,7 +8,7 @@ function Header() {
         iSkafferiet
       </Link>
 
-      <nav className="site-nav">
+      <nav className="site-nav" aria-label="Huvudnavigation">
         <Link to="/">Skafferiet</Link>
         <Link to="/add">Lägg till vara</Link>
       </nav>

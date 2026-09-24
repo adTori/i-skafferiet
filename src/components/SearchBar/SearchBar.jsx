@@ -5,7 +5,7 @@ function SearchBar({ searchTerm, onSearch }) {
 
       <input
         id="search"
-        type="text"
+        type="search"
         placeholder="Sök..."
         value={searchTerm}
         onChange={(event) => onSearch(event.target.value)}

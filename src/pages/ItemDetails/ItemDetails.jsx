@@ -70,7 +70,7 @@ function ItemDetails() {
         {loading && <Loading />}
 
         {error && (
-          <p className="item-details-error">
+          <p className="item-details-error" role="alert">
             {error}
           </p>
         )}

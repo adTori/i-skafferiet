@@ -60,7 +60,7 @@ function AddItemForm() {
         <input
           id="category"
           type="text"
-          placeholder="T.ex Torrvaror"
+          placeholder="T.ex. Torrvaror"
           value={category}
           onChange={(event) => setCategory(event.target.value)}
         />
@@ -88,7 +88,7 @@ function AddItemForm() {
       </div>
 
       {error && (
-        <p className="add-item-form-error">
+        <p className="add-item-form-error" role="alert">
           {error}
         </p>
       )}
