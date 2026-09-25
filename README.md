@@ -42,6 +42,7 @@ iSkafferiet is a responsive pantry management app built with React. The app make
 
 The project is organized into components, pages, context, hooks and services to keep the code structured and maintainable.
 
+```text
 src/
 ├── components/
 │   ├── AddItemForm/
@@ -66,6 +67,7 @@ src/
 ├── App.jsx
 ├── index.css
 └── main.jsx
+```
 
 ## Routing
 
