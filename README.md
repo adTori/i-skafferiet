@@ -69,6 +69,9 @@ src/
 └── main.jsx
 ```
 
+<img width="5409" height="5915" alt="diagram" src="https://github.com/user-attachments/assets/ea0fbbb7-758f-404f-8a2d-22891b63b4c5" />
+
+
 ## Routing
 
 The app uses React Router and includes three views:
