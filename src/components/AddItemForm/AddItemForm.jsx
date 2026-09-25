@@ -16,7 +16,7 @@ function AddItemForm() {
     event.preventDefault();
     
     if (!name.trim() || !category.trim()) {
-      setError("Fyll i namn och kategori.");
+      setError("Fyll i vara och kategori.");
       return;
     }
 
