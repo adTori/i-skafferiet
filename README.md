@@ -31,6 +31,13 @@ iSkafferiet is a responsive pantry management app built with React. The app make
 - localStorage
 - React Hot Toast
 
+
+## Pictures
+<img width="1599" height="695" alt="Skärmbild 2026-09-25 101130" src="https://github.com/user-attachments/assets/82c161f1-22e1-4e18-b540-9605f9f0a3e3" />
+
+<img width="1599" height="681" alt="Skärmbild 2026-09-25 101105" src="https://github.com/user-attachments/assets/6ca75970-d113-41a5-b73c-0e689d770c93" />
+
+
 ## Project Structure
 
 The project is organized into components, pages, context, hooks and services to keep the code structured and maintainable.
