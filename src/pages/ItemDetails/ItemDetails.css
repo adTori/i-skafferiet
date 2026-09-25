@@ -113,6 +113,23 @@
 
   .item-details-actions {
     margin-left: 0;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .item-details-actions button {
+    min-height: 40px;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .item-details-actions button:hover {
+    opacity: 1;
+    color: var(--text-h);
+    border-color: var(--text-h);
   }
 }
