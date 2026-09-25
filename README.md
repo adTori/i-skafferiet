@@ -125,9 +125,4 @@ Open the local URL shown in the terminal.
 ## Created by
 
 Victoria Friberg  
-2026s://github.com/adTori/i-skafferiet)
-
-## Skapad av
-
-Victoria Friberg  
 2026
